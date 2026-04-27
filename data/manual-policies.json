@@ -1,0 +1,32 @@
+[
+  {
+    "id": "policy-1774062616010-5e6966",
+    "name": "Block Admin Paths",
+    "action": "block",
+    "field": "path",
+    "operator": "startsWith",
+    "value": "/admin",
+    "active": true,
+    "createdAt": "2026-03-21T03:10:16.010Z"
+  },
+  {
+    "id": "policy-1774062985737-abf311",
+    "name": "Playwright UI Block",
+    "action": "block",
+    "field": "path",
+    "operator": "startsWith",
+    "value": "/playwright-admin",
+    "active": true,
+    "createdAt": "2026-03-21T03:16:25.737Z"
+  },
+  {
+    "id": "policy-1774063001005-e7969f",
+    "name": "Playwright UI Block",
+    "action": "block",
+    "field": "path",
+    "operator": "startsWith",
+    "value": "/playwright-admin",
+    "active": true,
+    "createdAt": "2026-03-21T03:16:41.005Z"
+  }
+]

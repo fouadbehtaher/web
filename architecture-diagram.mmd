@@ -1,0 +1,16 @@
+flowchart LR
+    U[Client / Attacker] --> W[AI-Based WAF Gateway]
+    W --> P[Preprocessing and Normalization]
+    P --> F[Feature Extraction]
+    F --> M[Naive Bayes ML Classifier]
+    F --> R[Hard-Block Rule Engine]
+    M --> D[Decision Engine]
+    R --> D
+    D -->|Allow| B[Protected Backend App]
+    D -->|Block| X[403 Security Response]
+    D --> L[Logs and Metrics]
+    T[Training Samples Dataset] --> TM[Model Training Script]
+    TM --> A[Trained Model Artifact]
+    A --> M
+    L --> O[Dashboard and Report Artifacts]
+

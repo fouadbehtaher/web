@@ -1,0 +1,23 @@
+{
+  "name": "ai-based-web-application-firewall",
+  "version": "1.0.0",
+  "description": "Self-contained graduation-project prototype for an AI-based web application firewall.",
+  "main": "src/waf/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "train": "node src/ml/train-model.js",
+    "evaluate": "node src/ml/evaluate-model.js",
+    "backend": "node src/backend/server.js",
+    "waf": "node src/waf/server.js",
+    "demo": "node src/demo/run-demo.js",
+    "benchmark": "node src/demo/run-benchmark.js"
+  },
+  "keywords": [
+    "waf",
+    "cybersecurity",
+    "machine-learning",
+    "graduation-project",
+    "nodejs"
+  ],
+  "license": "MIT"
+}
