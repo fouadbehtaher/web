@@ -11,6 +11,12 @@ The prototype combines:
 - a dashboard for logs, metrics, and generated evaluation artifacts,
 - a benchmark script that produces report-ready runtime results.
 
+## Request flow
+
+How the gateway in `src/waf/server.js` and `src/waf/decision-engine.js` decides one request. The diagram shows the order of steps, not measured accuracy.
+
+![WAF request flow](docs/images/web-waf-decision-flow.png)
+
 ## Project structure
 
 - `data/training-samples.json`: labeled benign and malicious HTTP request samples
