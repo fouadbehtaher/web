@@ -114,6 +114,9 @@ function main() {
     evaluatedAt: new Date().toISOString(),
     trainingSamples: train.length,
     testSamples: test.length,
+    testBenignSamples: test.filter((sample) => sample.label === "benign").length,
+    testMaliciousSamples: test.filter((sample) => sample.label !== "benign").length,
+    note: "Single deterministic 80/20 split. The test set is small, so these numbers are noisy. See results/cross-validation.json and results/model-comparison.md.",
     multiclassAccuracy: Number((exactMatches / test.length).toFixed(4)),
     binaryDetection: {
       accuracy: Number(((tp + tn) / test.length).toFixed(4)),
