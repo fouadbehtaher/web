@@ -1,0 +1,7 @@
+{
+  "folds": 5,
+  "benign": 52,
+  "malicious": 84,
+  "falsePositiveRate": 0.1154,
+  "falseNegativeRate": 0.0476
+}
