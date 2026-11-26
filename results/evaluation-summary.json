@@ -1,31 +1,37 @@
 {
-  "evaluatedAt": "2026-03-21T02:10:26.025Z",
-  "trainingSamples": 34,
-  "testSamples": 10,
-  "multiclassAccuracy": 1,
+  "evaluatedAt": "2026-11-26T00:51:41.317Z",
+  "trainingSamples": 110,
+  "testSamples": 26,
+  "testBenignSamples": 10,
+  "testMaliciousSamples": 16,
+  "note": "Single deterministic 80/20 split. The test set is small, so these numbers are noisy. See results/cross-validation.json and results/model-comparison.md.",
+  "multiclassAccuracy": 0.8077,
   "binaryDetection": {
-    "accuracy": 1,
-    "falsePositiveRate": 0,
+    "accuracy": 0.8077,
+    "falsePositiveRate": 0.5,
     "falseNegativeRate": 0,
-    "precision": 1,
+    "precision": 0.7619,
     "recall": 1,
-    "f1": 1
+    "f1": 0.8649
   },
   "confusionMatrix": {
     "benign": {
-      "benign": 2
+      "command_injection": 1,
+      "sql_injection": 3,
+      "benign": 5,
+      "path_traversal": 1
     },
     "sql_injection": {
-      "sql_injection": 2
+      "sql_injection": 4
     },
     "xss": {
-      "xss": 2
+      "xss": 4
     },
     "path_traversal": {
-      "path_traversal": 2
+      "path_traversal": 4
     },
     "command_injection": {
-      "command_injection": 2
+      "command_injection": 4
     }
   }
 }
