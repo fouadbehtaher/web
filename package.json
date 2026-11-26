@@ -10,7 +10,8 @@
     "backend": "node src/backend/server.js",
     "waf": "node src/waf/server.js",
     "demo": "node src/demo/run-demo.js",
-    "benchmark": "node src/demo/run-benchmark.js"
+    "benchmark": "node src/demo/run-benchmark.js",
+    "test": "node --test test/waf.test.js"
   },
   "keywords": [
     "waf",
