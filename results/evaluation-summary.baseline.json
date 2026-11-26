@@ -1,0 +1,32 @@
+{
+  "note": "Historical baseline, dated 2026-03-21. Original 44-sample dataset (12 benign, 32 malicious), 34 train / 10 test (2 benign, 8 malicious). Not a current claim. The current evaluation is results/evaluation-summary.json.",
+  "evaluatedAt": "2026-03-21T02:10:26.025Z",
+  "trainingSamples": 34,
+  "testSamples": 10,
+  "multiclassAccuracy": 1,
+  "binaryDetection": {
+    "accuracy": 1,
+    "falsePositiveRate": 0,
+    "falseNegativeRate": 0,
+    "precision": 1,
+    "recall": 1,
+    "f1": 1
+  },
+  "confusionMatrix": {
+    "benign": {
+      "benign": 2
+    },
+    "sql_injection": {
+      "sql_injection": 2
+    },
+    "xss": {
+      "xss": 2
+    },
+    "path_traversal": {
+      "path_traversal": 2
+    },
+    "command_injection": {
+      "command_injection": 2
+    }
+  }
+}
