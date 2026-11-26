@@ -71,7 +71,7 @@ test("allows ordinary requests that carry a query string but no headers", () => 
   }
 });
 
-test("holdout set: false positives stay at or below 5% and detection at or above 90%", () => {
+test("regression set (not an independent holdout): false positives at or below 5%, detection at or above 90%", () => {
   const { evaluate } = require("../src/ml/evaluate-holdout");
   const samples = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "holdout-samples.json"), "utf8"));
   const result = evaluate(path.resolve(__dirname, "..", "models", "trained-model.json"), samples);
