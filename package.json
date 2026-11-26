@@ -12,7 +12,8 @@
     "demo": "node src/demo/run-demo.js",
     "benchmark": "node src/demo/run-benchmark.js",
     "test": "node --test test/waf.test.js",
-    "evaluate:holdout": "node src/ml/evaluate-holdout.js models/trained-model.baseline.json models/trained-model.json"
+    "evaluate:regression": "node src/ml/evaluate-holdout.js models/trained-model.baseline.json models/trained-model.json",
+    "cross-validate": "node src/ml/cross-validate.js"
   },
   "keywords": [
     "waf",
