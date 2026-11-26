@@ -1,0 +1,45 @@
+[
+  {
+    "model": "models/trained-model.baseline.json",
+    "benignSamples": 40,
+    "maliciousSamples": 40,
+    "falsePositiveRate": 0.3,
+    "falsePositives": 12,
+    "detectionRateFullDecision": 0.95,
+    "detectionRateModelOnly": 0.95,
+    "falsePositiveIds": [
+      "hb2",
+      "hb3",
+      "hb5",
+      "hb7",
+      "hb9",
+      "hb10",
+      "hb13",
+      "hb15",
+      "hb20",
+      "hb22",
+      "hb24",
+      "hb27"
+    ],
+    "missedIds": [
+      "hm9",
+      "hm27"
+    ]
+  },
+  {
+    "model": "models/trained-model.json",
+    "benignSamples": 40,
+    "maliciousSamples": 40,
+    "falsePositiveRate": 0.025,
+    "falsePositives": 1,
+    "detectionRateFullDecision": 0.95,
+    "detectionRateModelOnly": 0.95,
+    "falsePositiveIds": [
+      "hb27"
+    ],
+    "missedIds": [
+      "hm9",
+      "hm27"
+    ]
+  }
+]
