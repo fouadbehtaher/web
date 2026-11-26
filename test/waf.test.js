@@ -63,3 +63,18 @@ test("a stored block policy for /admin wins over the model", () => {
   assert.equal(decision.decisionSource, "manual-policy");
   assert.equal(decision.maliciousProbability, 1);
 });
+
+test("allows ordinary requests that carry a query string but no headers", () => {
+  const decide0 = (url) => decideRequest(model, buildRequestRecord({ method: "GET", url, headers: {}, body: "" }));
+  for (const url of ["/products?id=5&sort=price", "/api/items?page=2&limit=20", "/search?q=usb+c+cable"]) {
+    assert.equal(decide0(url).action, "allow", url);
+  }
+});
+
+test("holdout set: false positives stay at or below 5% and detection at or above 90%", () => {
+  const { evaluate } = require("../src/ml/evaluate-holdout");
+  const samples = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "holdout-samples.json"), "utf8"));
+  const result = evaluate(path.resolve(__dirname, "..", "models", "trained-model.json"), samples);
+  assert.ok(result.falsePositiveRate <= 0.05, `false positive rate ${result.falsePositiveRate}`);
+  assert.ok(result.detectionRateFullDecision >= 0.9, `detection ${result.detectionRateFullDecision}`);
+});
