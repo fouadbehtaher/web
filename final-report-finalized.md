@@ -46,7 +46,7 @@ Web applications remain one of the most exposed attack surfaces in modern inform
 
 The implemented prototype was developed in Node.js and deployed as a reverse-proxy gateway in front of a protected backend application. Incoming requests are normalized, transformed into structured security features, evaluated by a multiclass Naive Bayes classifier, and then passed through a hybrid decision engine that determines whether each request should be allowed or blocked. The prototype focuses on four representative attack classes: SQL injection, cross-site scripting, path traversal, and command injection. To improve observability and demonstration quality, the system also includes structured logging, evaluation scripts, benchmark tooling, and an interactive dashboard for runtime inspection.
 
-The system was evaluated using a controlled labeled dataset and scripted benchmark scenarios. In the current prototype environment, the hybrid WAF achieved strong offline classification results and low runtime overhead while maintaining explainable decision outputs. These findings do not imply production-level completeness; however, they demonstrate that AI techniques can be integrated into application-layer traffic inspection in a compact, understandable, and academically defensible way.
+The system was evaluated using a controlled labeled dataset and scripted benchmark scenarios. In the current prototype environment, the hybrid WAF achieved high attack detection on its prepared samples, with a measurable false positive rate on benign requests, and low runtime overhead while maintaining explainable decision outputs. These findings do not imply production-level completeness; however, they demonstrate that AI techniques can be integrated into application-layer traffic inspection in a compact, understandable, and academically defensible way.
 
 ## Keywords
 
@@ -228,16 +228,21 @@ The request lab allows a user to submit a synthetic request and receive a classi
 
 The offline evaluation script reads the labeled dataset, performs a deterministic stratified split, trains the model on the training subset, and evaluates the hybrid decision logic on the test subset. The resulting summary is stored in `results/evaluation-summary.json`.
 
-At the current stage of the project, the recorded offline metrics are:
+The current offline metrics (regenerated with the retrained model) are:
 
-- accuracy: `1.00`
-- precision: `1.00`
+- dataset: 136 samples (52 benign, 84 malicious); deterministic 80/20 split, 110 train / 26 test (10 benign, 16 malicious)
+- accuracy: `0.81`
+- precision: `0.76`
 - recall: `1.00`
-- F1-score: `1.00`
-- false positive rate: `0.00`
+- F1-score: `0.86`
+- false positive rate: `0.50` (5 of 10 benign test requests blocked)
 - false negative rate: `0.00`
 
-These values are strong, but they must be interpreted in the correct context: the dataset is curated, limited in size, and designed for a graduation-project prototype rather than for production benchmarking.
+This single split has only 10 benign test samples, so the false positive rate is noisy. A 5-fold cross-validation on the same data (`results/cross-validation.json`) gives a false positive rate of 0.12 (6 of 52 benign) and a false negative rate of 0.05 (4 of 84 malicious). `results/model-comparison.md` compares the retrained model with the baseline on a separate regression set. The dataset is synthetic and small, so these are prototype figures and not a production guarantee.
+
+An earlier run on the original 44-sample dataset (dated 2026-03-21, 34 train / 10 test with 2 benign) reported accuracy 1.00 and false positive rate 0.00. That figure is kept only as history in `results/evaluation-summary.baseline.json`. It is not a current result.
+
+These values must be read in context: the dataset is synthetic, limited in size and designed for a graduation-project prototype, not for production benchmarking.
 
 ### 6.2 Runtime Demonstration
 
