@@ -17,6 +17,10 @@ How the gateway in `src/waf/server.js` and `src/waf/decision-engine.js` decides 
 
 ![WAF request flow](docs/images/web-waf-decision-flow.png)
 
+## Superseded file: `test-report.zip`
+
+`test-report.zip` is an old, unpackaged draft of the final report. It is a template version that does not open as a Word document, and its evaluation figures (accuracy 1.00, false positive rate 0.00) are obsolete. Do not cite it. Use `dist/AI-Based Web Application Firewall - Final Report.docx` (or `final-report-finalized.md`) and the current numbers in `results/evaluation-summary.json`, `results/cross-validation.json` and `results/model-comparison.md`.
+
 ## Project structure
 
 - `data/training-samples.json`: labeled benign and malicious HTTP request samples
