@@ -1,5 +1,7 @@
-// Evaluates one or more trained models on data/holdout-samples.json.
-// The holdout samples are never used for training. Usage:
+// Regression check: evaluates one or more trained models on data/holdout-samples.json.
+// These samples are not used for training, but they were looked at while the training data was being
+// revised, so this is a regression set and NOT an independent holdout estimate. (The file name is kept
+// for history.) Usage:
 //   node src/ml/evaluate-holdout.js [model.json ...]
 // With no arguments it evaluates models/trained-model.json.
 const fs = require("fs");
@@ -44,6 +46,7 @@ function evaluate(modelPath, samples) {
   });
 
   return {
+    setType: "regression set (seen during development, not an independent holdout)",
     model: path.relative(ROOT_DIR, modelPath),
     benignSamples: stats.benign,
     maliciousSamples: stats.malicious,
